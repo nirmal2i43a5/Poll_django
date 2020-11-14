@@ -1,0 +1,22 @@
+>>>  from polls.models import Question, Choice
+>>>  from django.utils import timezone
+
+>>>  Question.objects.all()
+>>>  q = Question(question_text="What is your favorite Programming Language?", pub_date=timezone.now())
+>>>  q.save()
+
+>>>  q.id
+>>>  q.question_text
+>>>  Question.objects.all()
+>>>  Question.objects.filter(id=1)
+>>>  Question.objects.get(pk=1)
+
+>>>  q = Question.objects.get(pk=1)
+>>>  q.choice_set.all()
+
+
+>>>  q.choice_set.create(choice_text='Java', votes=0)
+>>>  q.choice_set.create(choice_text='Python', votes=0)
+>>>  q.choice_set.create(choice_text='Js', votes=0)
+>>>  q.choice_set.all()
+>>>  quit()
